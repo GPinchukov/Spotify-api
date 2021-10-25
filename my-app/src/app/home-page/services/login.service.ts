@@ -8,7 +8,7 @@ export class LoginService {
 
   public CLIENT_ID: string = '549d7ad1b31342459c2ef91ddd50490c';
   public SP_AUTH_EP: string = 'https://accounts.spotify.com/authorize';
-  public RER_AFTER_LOG: string = 'http://localhost:4200';
+  public RER_AFTER_LOG: string = 'http://localhost:4200/albums';
 
   public SCOPES: Array<any> = ["playlist-read-private"];
   public SC_URL_PARAM = this.SCOPES.join("");
