@@ -4,6 +4,7 @@ import {Observable} from "rxjs";
 import { map } from 'rxjs/operators';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {User} from "../services/interface";
+import {LoginService} from "../services/login.service";
 
 @Component({
   selector: 'app-profile-page',
@@ -14,39 +15,12 @@ import {User} from "../services/interface";
 
 export class ProfilePageComponent implements OnInit {
 
-  token: any;
-  user: User = {
-    explicit_content: {
-      filter_enabled: false,
-      filter_locked: false
-    },
-    external_urls: {
-      spotify: ''
-    },
-    country: '',
-    display_name: '',
-    email: '',
-    followers: {
-      href: '',
-      total: 0,
-    },
-    href: '',
-    id: '',
-    images: [{
-      height: 0,
-      url: '',
-      width: 0
-    }],
-    product: '',
-    type: '',
-    uri: ''
-  }
 
-  img: any;
 
 
   constructor(private route: ActivatedRoute,
-              private http: HttpClient
+              private http: HttpClient,
+              public logserv: LoginService
              ){
 
 
@@ -55,13 +29,12 @@ export class ProfilePageComponent implements OnInit {
   fetchData(): any {
     return this.http.get<User>('https://api.spotify.com/v1/me',{
         headers: new HttpHeaders({
-          'Authorization': `Bearer ${this.token}`
+          'Authorization': `Bearer ${this.logserv.token}`
         })
       }
     ).subscribe(data =>{
       console.log(data.display_name)
-      this.user = data;
-      this.img = data.images[0].url;
+      this.logserv.user = data;
       console.log(data.images,'картинка' )
       // this.user = data;
       // this.user.id = data.id;
@@ -70,7 +43,7 @@ export class ProfilePageComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.fragment.subscribe((data:any) =>{
-      this.token = data.match(/access_token=(.*?)&/)[1];
+      this.logserv.token = data.match(/access_token=(.*?)&/)[1];
     })
     this.fetchData()
     }

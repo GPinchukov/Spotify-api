@@ -1,11 +1,10 @@
 import { Injectable } from '@angular/core';
-import {User} from "./interface";
 
 @Injectable({
   providedIn: 'root'
 })
 
-export class LoginService {
+export class ProfileService {
 
   public CLIENT_ID: string = '549d7ad1b31342459c2ef91ddd50490c';
   public SP_AUTH_EP: string = 'https://accounts.spotify.com/authorize';
@@ -13,34 +12,6 @@ export class LoginService {
 
   public SCOPES: Array<any> = ["playlist-read-private"];
   public SC_URL_PARAM = this.SCOPES.join("");
-
-  token: any;
-  user: User = {
-    explicit_content: {
-      filter_enabled: false,
-      filter_locked: false
-    },
-    external_urls: {
-      spotify: ''
-    },
-    country: '',
-    display_name: '',
-    email: '',
-    followers: {
-      href: '',
-      total: 0,
-    },
-    href: '',
-    id: '',
-    images: [{
-      height: 0,
-      url: '',
-      width: 0
-    }],
-    product: '',
-    type: '',
-    uri: ''
-  }
 
   constructor() { }
 }
