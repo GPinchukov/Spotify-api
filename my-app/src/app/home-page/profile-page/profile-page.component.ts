@@ -41,6 +41,20 @@ export class ProfilePageComponent implements OnInit {
     })
   }
 
+  fetchPlaylistData(): any {
+    return this.http.get<any>('https://api.spotify.com/v1/me/playlists',{
+        headers: new HttpHeaders({
+          'Authorization': `Bearer ${this.logserv.token}`
+        })
+      }
+    ).subscribe(pdata =>{
+      console.log(pdata)
+      this.logserv.user = pdata;
+      // this.user = data;
+      // this.user.id = data.id;
+    })
+  }
+
   ngOnInit(): void {
     this.route.fragment.subscribe((data:any) =>{
       this.logserv.token = data.match(/access_token=(.*?)&/)[1];
