@@ -1,9 +1,3 @@
-// export interface User {
-//   display_name: string,
-//   id: string
-// }
-
-
 
 export interface User {
   country?: string,
@@ -38,4 +32,35 @@ interface Ext {
 interface Exp {
   filter_enabled?: boolean,
   filter_locked?: boolean
+}
+
+export interface Playlists {
+  collaborative?: boolean,
+  description?: string,
+  external_urls?: Ext,
+  href?: string,
+  id: string,
+  images: Images[],
+  name: string,
+  owner: Owner,
+  primary_color?: string,
+  public?: boolean,
+  snapshot_id?: string,
+  tracks: Tracks,
+  type?: string,
+  uri?: string
+}
+
+interface Owner {
+  display_name: string,
+  external_urls: Ext,
+  href: string,
+  id: string,
+  type: string,
+  uri: string,
+}
+
+interface Tracks {
+  href: string,
+  total: number
 }

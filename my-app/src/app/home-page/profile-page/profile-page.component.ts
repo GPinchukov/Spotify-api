@@ -5,6 +5,7 @@ import { map } from 'rxjs/operators';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {User} from "../services/interface";
 import {LoginService} from "../services/login.service";
+import {PlaylistService} from "../services/playlist.service";
 
 @Component({
   selector: 'app-profile-page',
@@ -20,7 +21,8 @@ export class ProfilePageComponent implements OnInit {
 
   constructor(private route: ActivatedRoute,
               private http: HttpClient,
-              public logserv: LoginService
+              public logserv: LoginService,
+              public playlists: PlaylistService
              ){
 
 
@@ -48,8 +50,8 @@ export class ProfilePageComponent implements OnInit {
         })
       }
     ).subscribe(pdata =>{
-      console.log(pdata)
-      this.logserv.user = pdata;
+       this.playlists.playlists = pdata.items;
+      console.log(this.playlists.playlists, 'playlists2')
       // this.user = data;
       // this.user.id = data.id;
     })
@@ -59,7 +61,8 @@ export class ProfilePageComponent implements OnInit {
     this.route.fragment.subscribe((data:any) =>{
       this.logserv.token = data.match(/access_token=(.*?)&/)[1];
     })
-    this.fetchData()
+    this.fetchData();
+    this.fetchPlaylistData();
     }
 
 
