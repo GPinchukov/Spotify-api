@@ -11,8 +11,8 @@ export class LoginService {
   public SP_AUTH_EP: string = 'https://accounts.spotify.com/authorize';
   public RER_AFTER_LOG: string = 'http://localhost:4200/profile';
 
-  public SCOPES: Array<any> = ["playlist-read-private"];
-  public SC_URL_PARAM = this.SCOPES.join("");
+  public SCOPES: Array<any> = ["playlist-read-private","user-library-read"];
+  public SC_URL_PARAM = this.SCOPES.join('20%');
 
   token: any;
   user: User = {

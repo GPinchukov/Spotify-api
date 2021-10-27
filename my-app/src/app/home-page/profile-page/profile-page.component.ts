@@ -16,7 +16,7 @@ import {PlaylistService} from "../services/playlist.service";
 
 export class ProfilePageComponent implements OnInit {
 
-
+  ddata: any
 
 
   constructor(private route: ActivatedRoute,
@@ -52,8 +52,18 @@ export class ProfilePageComponent implements OnInit {
     ).subscribe(pdata =>{
        this.playlists.playlists = pdata.items;
       console.log(this.playlists.playlists, 'playlists2')
-      // this.user = data;
-      // this.user.id = data.id;
+    })
+  }
+
+  fetchAlbumsData(): any {
+    return this.http.get<any>('https://api.spotify.com/v1/me/albums?limit=7',{
+        headers: new HttpHeaders({
+          'Authorization': `Bearer ${this.logserv.token}`
+        })
+      }
+    ).subscribe(adata =>{
+      this.ddata = adata.items
+      console.log(adata, 'albums')
     })
   }
 
@@ -63,6 +73,7 @@ export class ProfilePageComponent implements OnInit {
     })
     this.fetchData();
     this.fetchPlaylistData();
+    this.fetchAlbumsData();
     }
 
 
