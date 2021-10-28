@@ -8,6 +8,8 @@ import {AlbumPageComponent} from "./home-page/album-page/album-page.component";
 import { PlaylistPageComponent } from './home-page/playlist-page/playlist-page.component';
 import { ProfilePageComponent } from './home-page/profile-page/profile-page.component';
 import {HttpClient, HttpClientModule} from "@angular/common/http";
+import { PlaylistComponent } from './home-page/playlist/playlist.component';
+import { SongsRowComponent } from './home-page/songs-row/songs-row.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import {HttpClient, HttpClientModule} from "@angular/common/http";
     LoginPageComponent,
     AlbumPageComponent,
     PlaylistPageComponent,
-    ProfilePageComponent
+    ProfilePageComponent,
+    PlaylistComponent,
+    SongsRowComponent
   ],
   imports: [
     BrowserModule,

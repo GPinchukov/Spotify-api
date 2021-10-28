@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute, ParamMap, Params} from "@angular/router";
+import {ActivatedRoute, ParamMap, Params, Router} from "@angular/router";
 import {Observable} from "rxjs";
 import { map } from 'rxjs/operators';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
@@ -20,6 +20,7 @@ export class ProfilePageComponent implements OnInit {
 
 
   constructor(private route: ActivatedRoute,
+              private router: Router,
               private http: HttpClient,
               public logserv: LoginService,
               public playlists: PlaylistService
@@ -31,7 +32,7 @@ export class ProfilePageComponent implements OnInit {
   fetchData(): any {
     return this.http.get<User>('https://api.spotify.com/v1/me',{
         headers: new HttpHeaders({
-          'Authorization': `Bearer ${this.logserv.token}`
+          'Authorization': `Bearer ${localStorage.getItem('token')}`
         })
       }
     ).subscribe(data =>{
@@ -44,9 +45,9 @@ export class ProfilePageComponent implements OnInit {
   }
 
   fetchPlaylistData(): any {
-    return this.http.get<any>('https://api.spotify.com/v1/me/playlists',{
+    return this.http.get<any>('https://api.spotify.com/v1/me/playlists?limit=7',{
         headers: new HttpHeaders({
-          'Authorization': `Bearer ${this.logserv.token}`
+          'Authorization': `Bearer ${localStorage.getItem('token')}`
         })
       }
     ).subscribe(pdata =>{
@@ -58,7 +59,7 @@ export class ProfilePageComponent implements OnInit {
   fetchAlbumsData(): any {
     return this.http.get<any>('https://api.spotify.com/v1/me/albums?limit=7',{
         headers: new HttpHeaders({
-          'Authorization': `Bearer ${this.logserv.token}`
+          'Authorization': `Bearer ${localStorage.getItem('token')}`
         })
       }
     ).subscribe(adata =>{
@@ -67,17 +68,16 @@ export class ProfilePageComponent implements OnInit {
     })
   }
 
+
   ngOnInit(): void {
-    this.route.fragment.subscribe((data:any) =>{
-      this.logserv.token = data.match(/access_token=(.*?)&/)[1];
-    })
+      this.route.fragment.subscribe((data: any) => {
+        this.logserv.token = data.match(/access_token=(.*?)&/)[1];
+        localStorage.setItem('token', this.logserv.token);
+      })
+
     this.fetchData();
     this.fetchPlaylistData();
     this.fetchAlbumsData();
     }
-
-
-
-
 
 }

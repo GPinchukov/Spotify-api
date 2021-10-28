@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import {Playlists} from "./interface";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {LoginService} from "./login.service";
 
 @Injectable({
   providedIn: 'root'
@@ -40,6 +42,19 @@ export class PlaylistService {
   type: '',
   uri: ''
 }]
+  playlist_data: any
 
-  constructor() { }
+  constructor(private http: HttpClient,
+              public logserv: LoginService) { }
+
+  getPlaylist(id: string): any {
+    return this.http.get<any>(`https://api.spotify.com/v1/playlists/${id}`,{
+        headers: new HttpHeaders({
+          'Authorization': `Bearer ${localStorage.getItem('token')}`
+        })
+      }
+    ).subscribe(adata =>{
+     this.playlist_data = adata
+    })
+}
 }

@@ -5,12 +5,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
 
 
+
 p{
   color: #ffffff;
 }
 
 .user_pic{
-  border-radius: 50%;
+  z-index: 8;
   object-fit: cover;
   width: 17rem;
   height: 17rem;
@@ -19,11 +20,12 @@ p{
 }
 
 .user_wrap{
+  position: relative;
   display: flex;
   width: 100%;
   height: 25rem;
-  background: linear-gradient(rgba(19, 151, 182, 0.95), #106579);
   flex-direction: row;
+  background: linear-gradient(#6e6a64, rgb(110, 106, 100));
   align-items: flex-end;
 }
 .user_name{
@@ -45,23 +47,20 @@ p{
 .user_follow{
   color: #ffffff;
   font-family: 'Hind Siliguri', sans-serif;
+  font-weight: 100;
   font-size: 1rem;
   text-decoration: none;
   margin-top: -1rem;
 }
 .user_info{
+  z-index: 8;
   padding-bottom: 3rem;
 }
 
-.albums_cover{
-  width: 100%;
-  border-radius: 3px;
-  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
-
-}
 .pl_wrap{
-  background: linear-gradient(#0c3944, rgb(0, 0, 0));
+  background: linear-gradient(#ffffff, rgb(0, 0, 0));
   height: 50rem;
+  position: absolute;
 }
 
 .pl_sign{
@@ -74,26 +73,6 @@ p{
   padding-left: 2.2rem;
 }
 
-.card{
-  margin-right: 1.5rem;
-  width: 13rem;
-  background: #252525;
-  border-radius: 5px;
-  padding: 7px;
-}
-.card:hover{
-  background: #424242;
-}
-
-.card_wrap{
-  margin-top: 10px;
-  margin-left: 10px;
-  display: flex;
-  .card_cont{
-    width: 90%;
-    margin: 5% auto;
-  }
-}
 .pl_title{
   padding-top: 20px;
   color: #FFFFFF;
@@ -108,4 +87,21 @@ p{
 }
 a {
   text-decoration: none;
+}
+
+.back_bluer{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  filter: blur(20rem) saturate(1);
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.playlist_wrap{
+  max-width: 90%;
+  color: #FFFFFF;
+  margin: 5rem auto;
 }
