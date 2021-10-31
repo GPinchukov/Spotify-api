@@ -43,6 +43,7 @@ export class PlaylistService {
   uri: ''
 }]
   playlist_data: any
+  public back: any
 
   constructor(private http: HttpClient,
               public logserv: LoginService) { }

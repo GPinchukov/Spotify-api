@@ -30,11 +30,13 @@
       <div class="card_wrap">
 
         <div class="card" *ngFor="let pl of this.ddata">
+          <a [routerLink]="['/album', pl.album.id]">
           <div class="card_cont">
             <img class="albums_cover" src="{{pl.album.images[0].url}}" alt="cover art">
             <p class="pl_title">{{pl.album.name}}</p>
             <p class="pl_desk">{{pl.album.artists[0].name}}</p>
           </div>
+          </a>
         </div>
       </div>
     </div>

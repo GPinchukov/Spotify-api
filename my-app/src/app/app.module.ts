@@ -10,6 +10,8 @@ import { ProfilePageComponent } from './home-page/profile-page/profile-page.comp
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 import { PlaylistComponent } from './home-page/playlist/playlist.component';
 import { SongsRowComponent } from './home-page/songs-row/songs-row.component';
+import { AlbumComponent } from './home-page/album/album.component';
+
 
 @NgModule({
   declarations: [
@@ -19,7 +21,8 @@ import { SongsRowComponent } from './home-page/songs-row/songs-row.component';
     PlaylistPageComponent,
     ProfilePageComponent,
     PlaylistComponent,
-    SongsRowComponent
+    SongsRowComponent,
+    AlbumComponent
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {PlaylistService} from "../services/playlist.service";
 
 @Component({
   selector: 'app-songs-row',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SongsRowComponent implements OnInit {
 
-  constructor() { }
+  constructor(public plServ: PlaylistService) { }
 
   ngOnInit(): void {
+  }
+
+  playAudio( audio: string ) {
+    let song = new Audio(audio);
+    return song.play();
   }
 
 }

@@ -5,10 +5,12 @@ import {AlbumPageComponent} from "./home-page/album-page/album-page.component";
 import {PlaylistPageComponent} from "./home-page/playlist-page/playlist-page.component";
 import {ProfilePageComponent} from "./home-page/profile-page/profile-page.component";
 import {PlaylistComponent} from "./home-page/playlist/playlist.component";
+import {AlbumComponent} from "./home-page/album/album.component";
 
 const routes: Routes = [
    { path: '', component: LoginPageComponent },
    { path: 'albums', component: AlbumPageComponent },
+   { path: 'album/:id', component: AlbumComponent },
    { path: 'playlists', component: PlaylistPageComponent },
    { path: 'playlist/:id', component: PlaylistComponent },
    { path: 'profile', component: ProfilePageComponent }

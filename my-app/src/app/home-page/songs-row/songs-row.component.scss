@@ -10,7 +10,7 @@
   background: rgba(110, 106, 100, 0.52);
 }
 .song_name{
-  width: 140px;
+  width: 400px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -24,8 +24,9 @@
 
 .line_title{
   font-family: 'Open Sans', sans-serif;
-  font-size: 21px;
-  padding-bottom: 2px;
+  font-size: 15px;
+  padding-bottom: 4px;
+  width: 300px;
 }
 .line_author{
   font-family: 'Roboto', sans-serif;
@@ -44,10 +45,39 @@
 }
 .line_more_info{
   font-family: "Roboto", sans-serif;
-  font-size: 19px;
-  color: #787878;
+  font-size: 14px;
+  color: #adabab;
   display: flex;
   justify-content: center;
   align-content: center;
   align-items: center;
+}
+.id_sog_line{
+  width: 30px;
+  display: flex;
+  justify-content: center;
+}
+.line_more_info_album{
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  color: #adabab;
+  display: flex;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: center;
+  width: 220px;
+}
+
+.column{
+  display: flex;
+  flex-direction: row ;
+  justify-content: space-between;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  color: #787878;
+}
+hr{
+  height: 1px;
+  background-color:  #787878;
+  border: none;
 }
