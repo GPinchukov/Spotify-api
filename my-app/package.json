@@ -19,6 +19,8 @@
     "@angular/platform-browser-dynamic": "~12.2.0",
     "@angular/router": "~12.2.0",
     "fast-average-color": "^7.0.1",
+    "io-player": "^1.1.0",
+    "ngx-audio-player": "^11.0.4",
     "rxjs": "~6.6.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"

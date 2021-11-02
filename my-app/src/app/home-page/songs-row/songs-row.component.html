@@ -3,9 +3,9 @@
   <div [ngStyle]="{'width': '400px'}">
    <p># TITLE</p>
   </div>
-  <div [ngStyle]="{'width': '220px'}">ALBUM</div>
-  <div [ngStyle]="{'width': '106px'}">ADDED</div>
-  <div [ngStyle]="{'width': '35px'}">TIME</div>
+  <div class="hider" [ngStyle]="{'width': '220px'}">ALBUM</div>
+  <div class="hider" [ngStyle]="{'width': '106px'}">ADDED</div>
+  <div class="hider" [ngStyle]="{'width': '35px'}">TIME</div>
 
   </div>
   <hr>
@@ -20,9 +20,9 @@
       <p class="line_author">{{pl.track.artists[0].name}}</p>
     </div>
   </div>
-  <div class="line_more_info_album">{{pl.track.album.name}}</div>
-  <div class="line_more_info">{{pl.added_at | date:'MMMM d, y'}}</div>
-  <div class="line_more_info">{{pl.track.duration_ms | date:'mm:ss'}}</div>
+  <div class="line_more_info_album hider">{{pl.track.album.name}}</div>
+  <div class="line_more_info hider">{{pl.added_at | date:'MMMM d, y'}}</div>
+  <div class="line_more_info hider">{{pl.track.duration_ms | date:'mm:ss'}}</div>
 </div>
 </div>
 </div>

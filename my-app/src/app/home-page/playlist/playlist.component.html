@@ -1,3 +1,5 @@
+<div class="app_player">
+<div class="body">
 <div class="user_wrap" [ngStyle]="{'background-color': this.playlistserv.back }">
   <img class="user_pic"    src="{{this.playlistserv.playlist_data.images[0].url}}" alt="pic">
   <div class="user_info">
@@ -10,4 +12,9 @@
 <div class="playlist_wrap">
 <app-songs-row class="pl_roll"></app-songs-row>
 </div>
-
+</div>
+<footer
+  class="player">
+  <app-player></app-player>
+</footer>
+</div>

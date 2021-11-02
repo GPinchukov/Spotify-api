@@ -3,7 +3,7 @@
     <div [ngStyle]="{'width': '400px'}">
       <p># TITLE</p>
     </div>
-    <div [ngStyle]="{'width': '35px'}">TIME</div>
+    <div class="hider" [ngStyle]="{'width': '35px'}">TIME</div>
 
   </div>
   <hr>
@@ -18,7 +18,7 @@
           <p class="line_author">{{song.artists[0].name}}</p>
         </div>
       </div>
-      <div class="line_more_info">{{song.duration_ms | date:'mm:ss'}}</div>
+      <div class="line_more_info hider">{{song.duration_ms | date:'mm:ss'}}</div>
     </div>
   </div>
 </div>

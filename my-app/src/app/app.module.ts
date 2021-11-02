@@ -13,6 +13,7 @@ import { SongsRowComponent } from './home-page/songs-row/songs-row.component';
 import { AlbumComponent } from './home-page/album/album.component';
 import { SongsColumComponent } from './home-page/songs-colum/songs-colum.component';
 import { AudioPlayerComponent } from './home-page/audio-player/audio-player.component';
+import { PlayerComponent } from './player/player.component';
 
 
 @NgModule({
@@ -26,7 +27,7 @@ import { AudioPlayerComponent } from './home-page/audio-player/audio-player.comp
     SongsRowComponent,
     AlbumComponent,
     SongsColumComponent,
-    AudioPlayerComponent
+    PlayerComponent
   ],
   imports: [
     BrowserModule,

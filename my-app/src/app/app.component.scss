@@ -34,3 +34,11 @@ li:hover {
     margin-left: 160px;
     font-size: 28px;
 }
+@media screen and (max-width:768px) {
+  .sidenav {
+    display: none;
+  }
+  .main{
+    margin-left: 0px;
+  }
+}

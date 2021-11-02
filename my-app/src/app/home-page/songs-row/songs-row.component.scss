@@ -81,3 +81,26 @@ hr{
   background-color:  #787878;
   border: none;
 }
+@media screen and (max-width:768px) {
+  .hider{
+    display: none;
+  }
+}
+@media screen and (max-width:375px) {
+  .hider{
+    display: none;
+  }
+  .line_title{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    padding-bottom: 4px;
+    width: 100%;
+  }
+  .song_name{
+    justify-content: flex-start;
+  }
+  .line_name_text{
+    padding-left: 1rem;
+  }
+
+}
