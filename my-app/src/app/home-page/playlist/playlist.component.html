@@ -1,6 +1,7 @@
 <div class="app_player">
 <div class="body">
 <div class="user_wrap" [ngStyle]="{'background-color': this.playlistserv.back }">
+  <a class="back_ar" href="#" onclick="javascript:window.history.back(-1);return false;"><svg height="25px" id="Layer_1" style="enable-background:new 0 0 512 512;"  fill="white" viewBox="0 0 512 512" width="25px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><polygon points="352,128.4 319.7,96 160,256 160,256 160,256 319.7,416 352,383.6 224.7,256 "/></svg></a>
   <img class="user_pic"    src="{{this.playlistserv.playlist_data.images[0].url}}" alt="pic">
   <div class="user_info">
     <p class="user_href">Playlist</p>
@@ -13,8 +14,9 @@
 <app-songs-row class="pl_roll"></app-songs-row>
 </div>
 </div>
-<footer
-  class="player">
-  <app-player></app-player>
-</footer>
+  <footer class="player">
+    <app-player></app-player>
+  </footer>
 </div>
+
+

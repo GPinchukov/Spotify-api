@@ -45,7 +45,7 @@ export class ProfilePageComponent implements OnInit {
   }
 
   fetchPlaylistData(): any {
-    return this.http.get<any>('https://api.spotify.com/v1/me/playlists?limit=9',{
+    return this.http.get<any>('https://api.spotify.com/v1/me/playlists?limit=16',{
         headers: new HttpHeaders({
           'Authorization': `Bearer ${localStorage.getItem('token')}`
         })
@@ -57,7 +57,7 @@ export class ProfilePageComponent implements OnInit {
   }
 
   fetchAlbumsData(): any {
-    return this.http.get<any>('https://api.spotify.com/v1/me/albums?limit=9',{
+    return this.http.get<any>('https://api.spotify.com/v1/me/albums?limit=16',{
         headers: new HttpHeaders({
           'Authorization': `Bearer ${localStorage.getItem('token')}`
         })

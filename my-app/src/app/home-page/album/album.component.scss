@@ -99,11 +99,16 @@ a {
   pointer-events: none;
   overflow: hidden;
 }
-
+.back_ar{
+  position: absolute;
+  top: 11px;
+  left: 1px;
+  display: none;
+}
 .playlist_wrap{
   max-width: 90%;
   color: #FFFFFF;
-  margin: 2rem auto;
+  margin: 1.5rem auto 0;
 }
 .pl_roll{
   z-index: 10;
@@ -117,6 +122,10 @@ a {
 
   backdrop-filter: blur(5px);
 }
+.player {
+  position: sticky;
+  bottom: 0;
+}
 .bord{
   width: 100%;
   height: 100px;
@@ -124,6 +133,9 @@ a {
 @media screen and (max-width:768px) {
   .user_name{
     font-size: 2rem;
+  }
+  .back_ar{
+    display: block;
   }
 }
 
@@ -136,5 +148,24 @@ a {
 
   .user_wrap{
     height: 12rem;
+  }
+
+  .user_info{
+    padding-bottom: 8px;
+  }
+
+  .user_href{
+    font-size: 12px;
+    padding-bottom: 8px;
+  }
+
+  .user_name{
+    font-size: 15px;
+    padding-bottom: 8px;
+  }
+
+  .user_follow{
+    font-size: 12px;
+    padding-bottom: 8px;
   }
 }

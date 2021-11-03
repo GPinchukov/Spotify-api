@@ -90,7 +90,9 @@ p{
 a {
   text-decoration: none;
 }
-
+.app_player{
+  min-height: 100vh;
+}
 .back_bluer{
   position: absolute;
   width: 100%;
@@ -109,6 +111,12 @@ a {
 }
 .pl_roll{
   z-index: 10;
+}
+.back_ar{
+  position: absolute;
+  top: 11px;
+  left: 1px;
+  display: none;
 }
 .container {
   width: 30rem;
@@ -131,6 +139,9 @@ a {
   .user_name{
     font-size: 2rem;
   }
+  .back_ar{
+    display: block;
+  }
 }
 
 @media screen and (max-width:375px) {
@@ -142,5 +153,24 @@ a {
 
   .user_wrap{
     height: 12rem;
+  }
+
+  .user_info{
+    padding-bottom: 8px;
+  }
+
+  .user_href{
+    font-size: 12px;
+    padding-bottom: 8px;
+  }
+
+  .user_name{
+    font-size: 15px;
+    padding-bottom: 8px;
+  }
+
+  .user_follow{
+    font-size: 12px;
+    padding-bottom: 8px;
   }
 }

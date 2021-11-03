@@ -10,8 +10,8 @@
 
 </div>
 <div class="pl_wrap">
-  <div class="pl_cont">
   <p class="pl_sign">Playlists:</p>
+  <div class="pl_cont">
   <div class="card_wrap">
 
 <div class="card" *ngFor="let pl of this.playlists.playlists">
@@ -25,8 +25,9 @@
   </div>
 </div>
   </div>
+  <p class="pl_sign">Albums:</p>
     <div class="pl_cont">
-      <p class="pl_sign">Albums:</p>
+
       <div class="card_wrap">
 
         <div class="card" *ngFor="let pl of this.ddata">
@@ -41,3 +42,6 @@
       </div>
     </div>
 </div>
+<footer class="player">
+  <app-player></app-player>
+</footer>
