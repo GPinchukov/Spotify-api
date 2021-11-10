@@ -1,6 +1,11 @@
-<h1>Login to your Spotify account</h1>
+<h1>Login to your Spotify account {{ someProperty }}</h1>
 <button class="button" (click)="login()">
   <p>LOG IN</p>
 </button>
+
+<button class="button" (click)="this.dynamic.createMyComponent()">
+  <p>Pop Up</p>
+</button>
+<ng-template Dynamic></ng-template>
 
 
