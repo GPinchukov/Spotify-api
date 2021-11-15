@@ -14,8 +14,8 @@ import { AlbumComponent } from './home-page/album/album.component';
 import { SongsColumComponent } from './home-page/songs-colum/songs-colum.component';
 import { AudioPlayerComponent } from './home-page/audio-player/audio-player.component';
 import { PlayerComponent } from './player/player.component';
-import { DynamicDirective } from './home-page/login-page/dynamic.directive';
-import { MeeterComponent } from './home-page/login-page/meeter/meeter.component';
+import { AlbumCardComponent } from './album-card/album-card.component';
+import { PlaylistCardComponent } from './playlist-card/playlist-card.component';
 
 
 @NgModule({
@@ -30,8 +30,8 @@ import { MeeterComponent } from './home-page/login-page/meeter/meeter.component'
     AlbumComponent,
     SongsColumComponent,
     PlayerComponent,
-    DynamicDirective,
-    MeeterComponent
+    AlbumCardComponent,
+    PlaylistCardComponent
   ],
   imports: [
     BrowserModule,
@@ -40,6 +40,5 @@ import { MeeterComponent } from './home-page/login-page/meeter/meeter.component'
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [MeeterComponent]
 })
 export class AppModule { }

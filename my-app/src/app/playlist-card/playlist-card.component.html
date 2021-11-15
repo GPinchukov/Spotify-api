@@ -1,0 +1,14 @@
+<div class="album_panel">
+<ng-container  *ngFor="let item of pl">
+  <a [routerLink]="['/playlist', item.id]">
+    <div class="card">
+    <div class="card_cont">
+      <img class="albums_cover" src="{{item.images[0].url}}" alt="cover art">
+      <p class="pl_title">{{item.name | slice:0:20 }} </p>
+      <p class="pl_desk">{{item.description | slice:0:20 }} &nbsp; </p>
+    </div>
+  </div>
+  </a>
+
+</ng-container>
+</div>

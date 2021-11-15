@@ -10,7 +10,7 @@ p{
   color: #ffffff;
 }
 
-.user_pic{
+.album_pic{
   filter: saturate(1);
   z-index: 8;
   object-fit: cover;
@@ -140,7 +140,7 @@ a {
 }
 
 @media screen and (max-width:375px) {
-  .user_pic{
+  .album_pic{
     width: 8rem;
     height: 8rem;
     margin: 1rem;

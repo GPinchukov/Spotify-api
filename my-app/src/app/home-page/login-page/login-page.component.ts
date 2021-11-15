@@ -2,24 +2,20 @@ import { Component, OnInit } from '@angular/core';
 import {LoginService} from "../services/login.service";
 import {from, interval, Observable, of, timer} from "rxjs";
 import {filter, map, mergeMap, concatAll, mapTo } from "rxjs/operators";
-import {DynamicDirective} from "./dynamic.directive";
 
 
 @Component({
   selector: 'app-login-page',
   templateUrl: './login-page.component.html',
   styleUrls: ['./login-page.component.scss'],
-  providers: [ DynamicDirective ]
+  providers: []
 })
 export class LoginPageComponent implements OnInit {
 
-  constructor(public logServ: LoginService,
-              public dynamic: DynamicDirective) { }
+  constructor(public logServ: LoginService) { }
 
-  public someProperty: any = 0;
 
   ngOnInit(): void {
-
   }
 
   login() {
