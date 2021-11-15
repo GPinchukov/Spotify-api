@@ -1,0 +1,29 @@
+
+<div class="user_wrap">
+  <img class="user_pic" src="{{this.logserv.user.images[0].url}}" alt="pic">
+  <div class="user_info">
+    <p class="user_href">Profile</p>
+    <div class="user_name">{{this.logserv.user.display_name.toUpperCase() }}</div>
+    <p class="user_follow">Followers: {{this.logserv.user.followers.total}}</p>
+  </div>
+
+
+</div>
+<div class="pl_wrap">
+  <p class="pl_sign">Playlists:</p>
+  <div class="pl_cont">
+  <div class="card_wrap">
+
+<app-playlist-card [pl]="this.playlists.playlists"></app-playlist-card>
+</div>
+  </div>
+  <p class="pl_sign">Albums:</p>
+    <div class="pl_cont">
+      <div class="card_wrap">
+        <app-album-card [pl]="ddata" class="album_card"> </app-album-card>
+      </div>
+    </div>
+</div>
+<footer class="player">
+  <app-player></app-player>
+</footer>
